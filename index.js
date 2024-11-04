@@ -3,6 +3,8 @@ const app = express();
 
 const cupomRoutes = require('./src/routes/cupomRoutes')
 
+app.use(express.json())
+
 app.get("/", (req, res) => {
     res.send('hello mundo');
 })
@@ -15,5 +17,5 @@ app.all("*", (req, res) => {
 })
 
 app.listen(8000, () => {
-    console, log(`Servidor de pé: http://localhost:8000`);
+    console.log(`Servidor de pé: http://localhost:8000`);
 })
