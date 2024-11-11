@@ -1,9 +1,8 @@
 const { listarTodosCupons, listarUmCupom, criarUmCupom, editarUmCupom, deletarUmCupom } = require('../controllers/cumpomController');
-
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
-    res.send(await listarTodosCupons())
+    res.send(await listarTodosCupons());
 })
  
 router.get('/:id', async (req, res) => {
@@ -11,15 +10,15 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    res.send(await criarUmCupom(req.body))
+    res.send(await criarUmCupom(req.body));
 })
 
 router.put('/:id', async (req, res) => {
-    res.send(await editarUmCupom(req.body, req.params.id))
+    res.send(await editarUmCupom(req.body, req.params.id));
 })
 
 router.delete('/:id', async(req, res) => {
-    res.send(await deletarUmCupom(req.params.id))
+    res.send(await deletarUmCupom(req.params.id));
 })
 
 module.exports = router;

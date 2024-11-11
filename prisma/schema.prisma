@@ -42,3 +42,13 @@ model subcategorias {
   categoria_id Int
   categoria    categorias @relation(fields: [categoria_id], references: [categoria_id])
 }
+
+model usuarios {
+  usuario_id    Int       @id @default(autoincrement())
+  usuario_nome  String
+  usuario_email String @unique
+  usuario_senha String
+  usuario_tipo  String @default("cliente")
+  createAt      DateTime @default(now())
+  updatedAt     DateTime? @updatedAt  
+}

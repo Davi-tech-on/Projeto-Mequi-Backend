@@ -1,14 +1,16 @@
 const express = require("express");
 const app = express();
 
-const cupomRoutes = require('./src/routes/cupomRoutes')
+const cupomRoutes = require('./src/routes/cupomRoutes');
+const usuarioRoutes = require('./src/routes/usuarioRoutes');
 
-app.use(express.json())
+app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send('hello mundo');
+    res.send('hello world');
 })
 
+app.use("/usuarios", usuarioRoutes);
 app.use("/cupons", cupomRoutes);
 
 
